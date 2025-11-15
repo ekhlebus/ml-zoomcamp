@@ -4,7 +4,7 @@ This repository contains a project focused on **predicting car prices** using ma
 The goal is to explore data, build predictive models, and evaluate their performance in estimating vehicle prices.
 
 ## 📂 Project Overview
-- **Data preprocessing** and feature engineering  
+- **Data preparation**: data cleaning and standartization 
 - **Exploratory data analysis (EDA)** to understand relationships and trends  
 - **Model training and evaluation** using regression algorithms  
 - **Performance comparison** across multiple models  
