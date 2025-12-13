@@ -19,6 +19,12 @@ This usually involves putting the model into a production environment—such as 
 * **ping.py** Python script for making simple ping-pong app as web service using Flask. After running this script (python ping.py) we can see something like this with address where it is running:
 ![running_ping](images/running_ping.PNG)
 
-To use it we need query it with 'curl' in terminal using <span style="color:red;">curl http://0.0.0.0:9696/ping</span> or in browser using <span style="color:red;">http://localhost:9696/ping</span>.
+To use the service, query it from the terminal using `curl`:
+
+```bash
+curl http://0.0.0.0:9696/ping
+
+Or open it in a browser:
+http://localhost:9696/ping
 
 * **churn_prediction_web-service.py** Python script for wrapping the **churn_prediction.py** script into a Flask app (serving the churn prediction model with Flask). Query it with 'requests'.
