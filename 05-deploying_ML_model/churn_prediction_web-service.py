@@ -7,6 +7,7 @@ from flask import jsonify
 
 model_file = 'churn_prediction_model_C=1.0.bin'
 
+# Loading previously saved pre-trained model and DictVectorizer
 with open(model_file, 'rb') as f_in:
     dv, model = pickle.load(f_in)
 
@@ -25,11 +26,11 @@ def predict():
 
     # Preparing the result as a json response
     result = {
-        'churn_probability': float(y_pred),
+        'churn_probability': float(y_pred), ## we need to cast numpy float type to python native float type
         'churn': bool(churn) # Converting numpy types to native Python types
     }
 
-    return jsonify(result)
+    return jsonify(result)  # Returning the result as a json response (send back the data in json format to the user)
 
 
 if __name__ == "__main__":
