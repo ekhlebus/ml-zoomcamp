@@ -1,4 +1,4 @@
-## Deploying Machine Learning Models
+# Deploying Machine Learning Models
 
 This repository contains info about saving, loading, and deployment churn prediction model.
 
@@ -8,7 +8,7 @@ Our model is still in Jupyter notebook. Now let's deploy it - save it and use it
 
 This usually involves putting the model into a production environment—such as a web service, API, cloud platform, or application—so that users or other systems can call it to get predictions.
 
-# Files in thsi repo:
+## Files in this repo:
 
 * **05-train-churn-model.ipynb** Jupyten notebook with code for saving and loading model.
 
