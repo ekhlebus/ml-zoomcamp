@@ -5,6 +5,7 @@ import requests
 
 
 url = 'http://localhost:9696/predict'
+# url = 'http://127.0.0.1:9696/predict'  # alternative way to specify localhost
 
 customer_id = 'xyz-123'
 customer = {
@@ -30,7 +31,7 @@ customer = {
 }
 
 
-response = requests.post(url, json=customer).json()
+response = requests.post(url, json=customer, timeout=5).json()  # Add a timeout to requests (prevents hanging)
 print(response)
 
 if response['churn'] == True:

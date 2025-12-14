@@ -46,10 +46,15 @@ This usually involves putting the model into a production environment—such as 
         if __name__ == "__main__":
         app.run(debug=True, host='0.0.0.0', port=9696)
         ```
-    * On Windows we can use an alternative like `waitress` (https://www.devdungeon.com/content/run-python-wsgi-web-app-waitress):
+    * On Windows we can use an alternative, running in cmd terminal something like `waitress` (https://www.devdungeon.com/content/run-python-wsgi-web-app-waitress):
 
     ```bash
     pip install waitress
     
     waitress-serve --listen=0.0.0.0:9696 predict:app 
     ```
+    Be sure that you have files **predict.py** and **churn_prediction_model_C=1.bin** in the folder where you are running `waitress`.
+
+    To get prediction run **predict-test.py** in another cmd terminal. If `app.run(debug=True)` cause blocking behavior, hanging requests, then try to remove or comment out this block from **predict.py** file.
+    
+
