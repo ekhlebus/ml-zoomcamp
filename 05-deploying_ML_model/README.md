@@ -11,7 +11,7 @@ This usually involves putting the model into a production environment—such as 
 * **05-train-churn-model.ipynb**
     Jupyten notebook with code for saving and loading model.
 
-* **train_churn_prediction.py**
+* **train.py**
     Python script from Jupyten notebook above for training churn prediction model. Running this script will train and save the model into **churn_prediction_model_C=1.bin**
 
 * **churn_prediction.py**
@@ -28,7 +28,7 @@ This usually involves putting the model into a production environment—such as 
     ```
     Or open it in a browser: http://localhost:9696/ping
 
-* **churn_prediction_web-service.py**
+* **predict.py**
     Python script for wrapping the **churn_prediction.py** script into a Flask app (serving the churn prediction model with Flask).
 
    To communicate with this web service we can use Jupyter notebook. Code for that is in the file **05-train-churn-model.ipynb**, section "Making requests".
@@ -41,7 +41,7 @@ This usually involves putting the model into a production environment—such as 
        ```bash
         gunicorn --bind 0.0.0.0:9696 predict:app
         ```
-        In this case the next part of **churn_prediction_web-service.py** script will not be executed, because it is in if statement, and here we will not get warnings since not it is in production mode (no debug mode): 
+        In this case the next part of **predict.py** script will not be executed, because it is in if statement, and here we will not get warnings since not it is in production mode (no debug mode): 
         ```bash
         if __name__ == "__main__":
         app.run(debug=True, host='0.0.0.0', port=9696)
