@@ -10,13 +10,17 @@ This usually involves putting the model into a production environment—such as 
 
 ## Files in this repo:
 
-* **05-train-churn-model.ipynb** Jupyten notebook with code for saving and loading model.
+* **05-train-churn-model.ipynb**
+    Jupyten notebook with code for saving and loading model.
 
-* **train_churn_prediction.py** Python script from Jupyten notebook above for training churn prediction model. Running this script will train and save the model into **churn_prediction_model_C=1.bin**
+* **train_churn_prediction.py**
+    Python script from Jupyten notebook above for training churn prediction model. Running this script will train and save the model into **churn_prediction_model_C=1.bin**
 
-* **churn_prediction.py** Python script from Jupyten notebook above for using previously saved model and making churn prediction.
+* **churn_prediction.py**
+    Python script from Jupyten notebook above for using previously saved model and making churn prediction.
 
-* **ping.py** Python script for making simple ping-pong app as web service using Flask. After running this script (python ping.py) we can see something like below with address where it is running:
+* **ping.py**
+    Python script for making simple ping-pong app as web service using Flask. After running this script (python ping.py) we can see something like below with address where it is running:
 ![running_ping](images/running_ping.PNG)
 
     To use the service, query it from the terminal using `curl`:
@@ -26,9 +30,10 @@ This usually involves putting the model into a production environment—such as 
     ```
     Or open it in a browser: http://localhost:9696/ping
 
-* **churn_prediction_web-service.py** Python script for wrapping the **churn_prediction.py** script into a Flask app (serving the churn prediction model with Flask).
+* **churn_prediction_web-service.py**
+    Python script for wrapping the **churn_prediction.py** script into a Flask app (serving the churn prediction model with Flask).
 
    To communicate with this web service we can use Jupyter notebook. Code for that is in the file **05-train-churn-model.ipynb**, section "Making requests".
    
-   ⚠️ **Warning:** Since we are running the Flask in debug mode, every changes which are made in churn_prediction_web-service.py file during running our web service are detected. 
+   ⚠️ Since we are running the Flask in debug mode, every changes which are made in churn_prediction_web-service.py file during running our web service are detected. 
    In production deployment we need to use **WSGI server** instead of plain Flask.
