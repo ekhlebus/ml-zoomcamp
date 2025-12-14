@@ -11,9 +11,12 @@ model_file = 'churn_prediction_model_C=1.0.bin'
 with open(model_file, 'rb') as f_in:
     dv, model = pickle.load(f_in)
 
-app = Flask('churn') # Creating a Flask web service named 'churn'
+# Creating a Flask web service named 'churn'
+app = Flask('churn')
 
+# Putting a Flask web service at address /predict using POST method
 @app.route('/predict', methods=['POST']) # WE use POST method to be able to send customer data
+
 # Defining predict function which will get customer data from request and return churn probability
 def predict():
     customer = request.get_json() # Getting customer data from json request as a python dictionary

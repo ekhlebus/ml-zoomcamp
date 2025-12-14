@@ -26,4 +26,9 @@ This usually involves putting the model into a production environment—such as 
     ```
     Or open it in a browser: http://localhost:9696/ping
 
-* **churn_prediction_web-service.py** Python script for wrapping the **churn_prediction.py** script into a Flask app (serving the churn prediction model with Flask). Query it with 'requests'.
+* **churn_prediction_web-service.py** Python script for wrapping the **churn_prediction.py** script into a Flask app (serving the churn prediction model with Flask).
+
+   To communicate with this web service we can use Jupyter notebook. Code for that is in the file **05-train-churn-model.ipynb**, section "Making requests".
+   
+   ⚠️ **Warning:** Since we are running the Flask in debug mode, every changes which are made in churn_prediction_web-service.py file during running our web service are detected. 
+   In production deployment we need to use **WSGI server** instead of plain Flask.
