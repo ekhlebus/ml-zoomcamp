@@ -2,9 +2,7 @@
 
 This repository contains info about saving, loading, and deployment churn prediction model.
 
-Our model is still in Jupyter notebook. Now let's deploy it - save it and use it.
-
-“Deploy the model” means taking a trained machine-learning model and making it available for real-world use, so that new data can be sent to it and it can return predictions.
+**Deploy the model** means taking a trained machine-learning model and making it available for real-world use, so that new data can be sent to it and it can return predictions.
 
 This usually involves putting the model into a production environment—such as a web service, API, cloud platform, or application—so that users or other systems can call it to get predictions.
 
@@ -37,3 +35,21 @@ This usually involves putting the model into a production environment—such as 
    
    ⚠️ Since we are running the Flask in debug mode, every changes which are made in churn_prediction_web-service.py file during running our web service are detected. 
    In production deployment we need to use **WSGI server** instead of plain Flask.
+
+   * As an example of WSGI server we can use `gunicorn` on MacOC or Linux (gunicorn does not support Windows):
+
+       ```bash
+        gunicorn --bind 0.0.0.0:9696 predict:app
+        ```
+        In this case the next part of **churn_prediction_web-service.py** script will not be executed, because it is in if statement, and here we will not get warnings since not it is in production mode (no debug mode): 
+        ```bash
+        if __name__ == "__main__":
+        app.run(debug=True, host='0.0.0.0', port=9696)
+        ```
+    * On Windows we can use an alternative like `waitress` (https://www.devdungeon.com/content/run-python-wsgi-web-app-waitress):
+
+    ```bash
+    pip install waitress
+    
+    waitress-serve --listen=0.0.0.0:9696 predict:app 
+    ```
