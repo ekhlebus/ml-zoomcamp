@@ -57,4 +57,16 @@ This usually involves putting the model into a production environment—such as 
 
         To get prediction run **predict-test.py** in another cmd terminal. If `app.run(debug=True)` cause blocking behavior, hanging requests, then try to remove or comment out this block from **predict.py** file.
     
+* **Pipfile** and **Pipfile.lock** 
+Files for virtual environments. In _Pipfile_ we an see the libraries we installed. In _Pipfile.lock_ we can see that each library with its installed version is named and a hash file is there to reproduce if we move the environment to another machine.
 
+    To install the libraries we want for our project in the virtual environment, use the command:
+    
+    ```
+    pipenv install numpy scikit-learn==0.24.1 flask
+    
+    ```
+    
+    If we want to run the project in another machine, we can easily install the libraries we want with the command ```pipenv install```. This command will look into _Pipfile_ and _Pipfile.lock_ to install the libraries with specified version.
+
+    After installing the required libraries we can run the project in the virtual environment with ```pipenv shell``` command. This will go to the virtual environment's shell and then any command we execute will use the virtual environment's libraries. 
