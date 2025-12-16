@@ -64,9 +64,31 @@ Files for virtual environments. In _Pipfile_ we an see the libraries we installe
     
     ```
     pipenv install numpy scikit-learn==0.24.1 flask
-    
     ```
     
     If we want to run the project in another machine, we can easily install the libraries we want with the command ```pipenv install```. This command will look into _Pipfile_ and _Pipfile.lock_ to install the libraries with specified version.
 
     After installing the required libraries we can run the project in the virtual environment with ```pipenv shell``` command. This will go to the virtual environment's shell and then any command we execute will use the virtual environment's libraries. 
+
+* **Dockerfile** 
+We can find python tags on Docker hub which contains all the images of python: https://hub.docker.com/_/python.
+
+   To run some specific image use code below and get python terminal:
+   ```
+   docker run -it --rm python:3.8.12-slim  # -it means that we want access to the terminal
+   ```
+
+   To go inside ```python:3.8.12-slim``` image we can access its Linux terminal using: 
+   ```
+   docker run -it --rm --entrypoint=bash python:3.8.12-slim 
+   ```
+   Here we can do whatever we want and it will be isolated from the other system. Everything what we want to do inside this Docker image we can define in _Dockerfile_.
+
+   To build container using instructions from _Dockerfile_ from current directory:
+   ```   
+   docker build -t zoomcamp-test .
+   ```
+   After building we can run resulted image instead of running ```python:3.8.12-slim``` like we did before:
+   ```
+   docker run -it --rm --entrypoint=bash zoomcamp-test
+   ```
