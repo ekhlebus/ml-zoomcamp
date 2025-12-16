@@ -11,6 +11,9 @@ This usually involves putting the model into a production environment—such as 
 * **05-train-churn-model.ipynb**
     Jupyten notebook with code for saving and loading model.
 
+* **workshop-uv-fastapi.ipynb**
+    Jupyten notebook from workshop with code for saving and loading model.
+
 * **train.py**
     Python script from Jupyten notebook above for training churn prediction model. Running this script will train and save the model into **churn_prediction_model_C=1.bin**
 
@@ -70,7 +73,7 @@ Files for virtual environments. In _Pipfile_ we an see the libraries we installe
 
     After installing the required libraries we can run the project in the virtual environment with ```pipenv shell``` command. This will go to the virtual environment's shell and then any command we execute will use the virtual environment's libraries. 
 
-* **Dockerfile** 
+* **Dockerfile** specifies what kind of things we want to do inside the container, what we want to put and run there.
 We can find python tags on Docker hub which contains all the images of python: https://hub.docker.com/_/python.
 
    To run some specific image use code below and get python terminal:
@@ -90,5 +93,5 @@ We can find python tags on Docker hub which contains all the images of python: h
    ```
    After building we can run resulted image instead of running ```python:3.8.12-slim``` like we did before:
    ```
-   docker run -it --rm --entrypoint=bash zoomcamp-test
+   docker run -it --rm -p 9696:9696 zoomcamp-test
    ```
