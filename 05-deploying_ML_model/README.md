@@ -12,7 +12,7 @@ This usually involves putting the model into a production environment—such as 
     Jupyten notebook with code for saving and loading model.
 
 * **workshop-uv-fastapi.ipynb**
-    Jupyten notebook from updated workshop with code for saving and loading model, in this notebook dv and model saved as pipeline. Also, based on this notebook file **workshop-uv-fastapi.py** created.
+    Jupyten notebook from updated workshop with code for saving and loading model, in this notebook dv and model saved as pipeline. Based on this notebook file **workshop-uv-fastapi.py** created, from this file we will do two files: **train2.py** and **predict2.py**.
 
 * **train.py**
     Python script from Jupyten notebook above for training churn prediction model. Running this script will train and save the model into **churn_prediction_model_C=1.bin**

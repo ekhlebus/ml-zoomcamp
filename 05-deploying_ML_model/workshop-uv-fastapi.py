@@ -1,20 +1,10 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# This is a notebook for an updated module 5 of ML Zoomcamp
-# 
-# The code is based on the modules 3 and 4. We use the same dataset: [telco customer churn](https://www.kaggle.com/datasets/blastchar/telco-customer-churn)
-
-# In[1]:
-
-
 import pandas as pd
 import numpy as np
 import sklearn
-
-
-# In[2]:
-
+import pickle
 
 print(f'pandas=={pd.__version__}')
 print(f'numpy=={np.__version__}')
