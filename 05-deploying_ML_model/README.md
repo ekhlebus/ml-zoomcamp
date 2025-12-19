@@ -22,7 +22,7 @@ This usually involves putting the model into a production environment—such as 
 
 * **ping.py**
     Python script for making simple ping-pong app as web service using Flask. After running this script (python ping.py) we can see something like below with address where it is running:
-![running_ping](images/running_ping.PNG)
+![running_ping](../images/running_ping.PNG)
 
     To use the service, query it from the terminal using `curl`:
 
