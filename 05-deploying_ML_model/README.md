@@ -1,6 +1,6 @@
 # Deploying Machine Learning Models
 
-This repository contains info about saving, loading, and deployment churn prediction model.
+This repository contains info about saving, loading, and deployment churn prediction model using FastAPI.
 
 **Deploy the model** means taking a trained machine-learning model and making it available for real-world use, so that new data can be sent to it and it can return predictions.
 
@@ -32,3 +32,6 @@ This usually involves putting the model into a production environment—such as 
      ![running_prediction_execution_as_docs_in_browser](https://github.com/ekhlebus/ml-zoomcamp/blob/main/05-deploying_ML_model/images/churn-prediction_FastAPI_localhost-9696-docs-execution.PNG)
 
     And conviniently the execution gives us the ```curl``` command. We can copy it and instead using it in browser, we can use it in command line.
+
+* **marketing.py**
+    Python script for making requests. Works only if web service is running (running ```python predict.py```).
