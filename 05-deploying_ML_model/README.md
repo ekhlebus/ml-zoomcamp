@@ -23,4 +23,8 @@ This usually involves putting the model into a production environment—such as 
     ```
     uvicorn predict:app --host 0.0.0.0 --port 9696 --reload
     ```
-    Now we can go to http://localhost:9696/docs, input customer (json formatted), execute and see prediction.
+    Now we can go to http://localhost:9696/docs and input customer in **json format**:
+    
+    
+     execute and see prediction:
+

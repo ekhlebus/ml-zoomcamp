@@ -22,7 +22,7 @@ def predict_single(customer):
 
 
 # Add decorator to add extra functionality to ping function (here it allows us to turn function into web service)
-@app.post("/predict2")  # This function will be accessible at address /predict using POST method
+@app.post("/predict")  # This function will be accessible at address /predict using POST method
 def predict(customer: Dict[str, Any]):
     churn = predict_single(customer)
     return {
