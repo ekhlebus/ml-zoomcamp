@@ -64,7 +64,16 @@ This usually involves putting the model into a production environment—such as 
         Be sure that you have files **predict.py** and **churn_prediction_model_C=1.bin** in the folder where you are running `waitress`.
 
         To get prediction run **predict-test.py** in another cmd terminal. If `app.run(debug=True)` cause blocking behavior, hanging requests, then try to remove or comment out this block from **predict.py** file.
-    
+
+* **predict2.py**
+    Python script for wrapping the **workshop-uv-fastapi.py** script into a FastAPI app (serving the churn prediction model with FastAPI).
+
+    There is a way to reload it every time we change the code. This is a function to watch the changes (we will not need to stop and start the server every each change):
+    ```
+    uvicorn predict2:app --host 0.0.0.0 --port 9696 --reload
+    ```
+    Now we can go to http://localhost:9696/docs, input customer (json formatted), execute and see prediction.
+
 * **Pipfile** and **Pipfile.lock** 
 Files for virtual environments. In _Pipfile_ we an see the libraries we installed. In _Pipfile.lock_ we can see that each library with its installed version is named and a hash file is there to reproduce if we move the environment to another machine.
 
