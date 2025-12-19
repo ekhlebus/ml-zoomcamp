@@ -31,6 +31,11 @@ This usually involves putting the model into a production environment—such as 
     ```
     Or open it in a browser: http://localhost:9696/ping
 
+* **ping2.py**
+    Python script for making simple ping-pong app as web service using FastAPI. 
+
+    FastAPI has nice feature! Look at http://localhost:9696/docs and see what functions/endpoints we have in our application. Also, there we can see the description of our function and we can "Try it out" there.
+
 * **predict.py**
     Python script for wrapping the **churn_prediction.py** script into a Flask app (serving the churn prediction model with Flask).
 
