@@ -23,7 +23,7 @@ This usually involves putting the model into a production environment—such as 
     ```
     uvicorn predict:app --host 0.0.0.0 --port 9696 --reload
     ```
-    Now we can go to http://localhost:9696/docs and input customer in **json format**:
+    Now we can go to http://localhost:9696/docs and input customer in **json format** (double quotes):
     
     ![running_prediction_as_docs_in_browser](https://github.com/ekhlebus/ml-zoomcamp/blob/main/05-deploying_ML_model/images/churn-prediction_FastAPI_localhost-9696-docs.PNG)
 
@@ -31,3 +31,4 @@ This usually involves putting the model into a production environment—such as 
 
      ![running_prediction_execution_as_docs_in_browser](https://github.com/ekhlebus/ml-zoomcamp/blob/main/05-deploying_ML_model/images/churn-prediction_FastAPI_localhost-9696-docs-execution.PNG)
 
+    And conviniently the execution gives us the ```curl``` command. We can copy it and instead using it in browser, we can use it in command line.
