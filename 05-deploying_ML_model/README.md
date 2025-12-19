@@ -25,6 +25,9 @@ This usually involves putting the model into a production environment—such as 
     ```
     Now we can go to http://localhost:9696/docs and input customer in **json format**:
     
-    
+    ![running_prediction_as_docs_in_browser](https://github.com/ekhlebus/ml-zoomcamp/blob/main/05-deploying_ML_model/images/churn-prediction_FastAPI_localhost-9696-docs.PNG)
+
      execute and see prediction:
+
+     ![running_prediction_execution_as_docs_in_browser](https://github.com/ekhlebus/ml-zoomcamp/blob/main/05-deploying_ML_model/images/churn-prediction_FastAPI_localhost-9696-docs-execution.PNG)
 
