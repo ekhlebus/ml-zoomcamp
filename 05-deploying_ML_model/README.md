@@ -1,6 +1,7 @@
 # Deploying Machine Learning Models
 
 This repository contains info about saving, loading, and deployment churn prediction model using FastAPI.
+One of the advantage in using FastAPI instead of Flask is that in FastAPI there is a strong build in mechanism of validation of input (in simple words it will say us that something wrong with the model if marketing department use for example 10 in cells where only 1 or 0 accepted, for that we need to use pydantic).
 
 **Deploy the model** means taking a trained machine-learning model and making it available for real-world use, so that new data can be sent to it and it can return predictions.
 
